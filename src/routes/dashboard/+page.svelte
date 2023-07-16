@@ -5,28 +5,35 @@
     function Request_Results() {
           document.getElementById('IO_box').innerText=JSON.stringify(data.post, null, 2)
           document.getElementById('IO_box').classList.remove('text-danger')
+          console.log("User Making a Request for API Information")
     }
 
     function Request_ERROR() {
           document.getElementById('IO_box').innerText=JSON.stringify(data.error_post, null, 2)
           document.getElementById('IO_box').classList.add('text-danger'); 
+          console.log("User Making a Request for an API Information in error to show off error reporting ability")
      }
     
     function Clear_Results() {
           document.getElementById('IO_box').innerText="Results will be displayed here."
           document.getElementById('IO_box').classList.remove('text-danger')
+          console.log("User Requesting to clear the results box")
      } 
 
     function Undo_Results(){
         if(document.getElementById('IO_box').innerText=="Results will be displayed here."){
-            Request_Results()
+            document.getElementById('IO_box').innerText=JSON.stringify(data.post, null, 2)
+            document.getElementById('IO_box').classList.remove('text-danger')
         }else{
             document.getElementById('IO_box').innerText="Results will be displayed here."
+            document.getElementById('IO_box').classList.remove('text-danger')
         }
+        console.log("User Requested an operation Undo")
     }
 
     function logout(){
         document.getElementById('logout_form').submit();
+        console.log("User Requested Log Out")
     }
 
 </script>
@@ -61,7 +68,7 @@
                     <a href="#authmenu" data-bs-toggle="collapse" aria-expanded="false" class="dropdown-toggle no-caret-down" title="show all application Authentication tools"><i class="fas fa-user-shield"></i> Authentication</a>
                     <ul class="collapse list-unstyled" id="authmenu">
                         <li>
-                            <a href="/" on:click={logout} title="Logout from the app and return to the login page"><i class="fas fa-lock"></i> Login</a>
+                            <a href="/" on:click={logout} title="Logout from the app and return to the login page"><i class="fas fa-lock"></i> Logout</a>
                         </li>
                     </ul>
                 </li>

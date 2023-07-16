@@ -4,10 +4,17 @@
 
     function Request_Results() {
           document.getElementById('IO_box').innerText=JSON.stringify(data.post, null, 2)
+          document.getElementById('IO_box').classList.remove('text-danger')
+    }
+
+    function Request_ERROR() {
+          document.getElementById('IO_box').innerText=JSON.stringify(data.error_post, null, 2)
+          document.getElementById('IO_box').classList.add('text-danger'); 
      }
     
     function Clear_Results() {
           document.getElementById('IO_box').innerText="Results will be displayed here."
+          document.getElementById('IO_box').classList.remove('text-danger')
      } 
 
     function Undo_Results(){
@@ -104,6 +111,7 @@
                                     <div class="card-body text-left">
                                         <h5 class="card-title">Controls</h5>
                                         <div class="text-left"><button type="button" class="btn btn-primary mb-1" on:click={Request_Results} title="Will ask the server for your users configured and requested data">Request</button></div>
+                                        <div class="text-left"><button type="button" class="btn btn-primary mb-1" on:click={Request_ERROR} title="Will ask the server to return an errored out request for applicaiton testing">Request an error</button></div>
                                         <div class="text-left"><button type="button" class="btn btn-primary mb-1" on:click={Undo_Results} title="Will undo the last operation affecting the results field">Undo</button></div>
                                     </div>
                             </div>

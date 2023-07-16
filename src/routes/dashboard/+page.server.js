@@ -12,4 +12,4 @@ export const actions = {
 		cookies.delete('allowed', { path: '/' });
 		throw redirect(303, '/');
 	}
-};
+}

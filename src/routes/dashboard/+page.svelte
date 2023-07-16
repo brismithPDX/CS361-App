@@ -47,22 +47,22 @@
             </div>
             <ul class="list-unstyled components text-secondary">
                 <li>
-                    <a href="/dashboard"><i class="fas fa-home"></i> Dashboard</a>
+                    <a href="/dashboard" title="Return to the application dashboard"><i class="fas fa-home"></i> Dashboard</a>
                 </li>
                 
                 <li>
-                    <a href="#authmenu" data-bs-toggle="collapse" aria-expanded="false" class="dropdown-toggle no-caret-down"><i class="fas fa-user-shield"></i> Authentication</a>
+                    <a href="#authmenu" data-bs-toggle="collapse" aria-expanded="false" class="dropdown-toggle no-caret-down" title="show all application Authentication tools"><i class="fas fa-user-shield"></i> Authentication</a>
                     <ul class="collapse list-unstyled" id="authmenu">
                         <li>
-                            <a href="/" on:click={logout}><i class="fas fa-lock"></i> Login</a>
+                            <a href="/" on:click={logout} title="Logout from the app and return to the login page"><i class="fas fa-lock"></i> Login</a>
                         </li>
                     </ul>
                 </li>
                 <li>
-                    <a href="#helpmenu" data-bs-toggle="collapse" aria-expanded="false" class="dropdown-toggle no-caret-down"><i class="fas fa-book"></i> Help</a>
+                    <a href="#helpmenu" data-bs-toggle="collapse" aria-expanded="false" class="dropdown-toggle no-caret-down" title="show all application help tools"><i class="fas fa-book"></i> Help</a>
                     <ul class="collapse list-unstyled" id="helpmenu">
                         <li>
-                            <a href="https://github.com/brismithPDX/CS361-App"><i class="fab fa-github"></i> Documentation</a>
+                            <a href="https://github.com/brismithPDX/CS361-App" title="Go to project github for full documenation"><i class="fab fa-github"></i> Documentation</a>
                         </li>
                     </ul>
                 </li>

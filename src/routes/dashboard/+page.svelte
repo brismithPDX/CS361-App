@@ -58,6 +58,14 @@
                         </li>
                     </ul>
                 </li>
+                <li>
+                    <a href="#helpmenu" data-bs-toggle="collapse" aria-expanded="false" class="dropdown-toggle no-caret-down"><i class="fas fa-book"></i> Help</a>
+                    <ul class="collapse list-unstyled" id="helpmenu">
+                        <li>
+                            <a href="https://github.com/brismithPDX/CS361-App"><i class="fab fa-github"></i> Documentation</a>
+                        </li>
+                    </ul>
+                </li>
                 <li hidden>
                     <a href="#pagesmenu" data-bs-toggle="collapse" aria-expanded="false" class="dropdown-toggle no-caret-down"><i class="fas fa-copy"></i> Pages</a>
                     <ul class="collapse list-unstyled" id="pagesmenu">

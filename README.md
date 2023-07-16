@@ -1,38 +1,39 @@
-# create-svelte
+# smithb22 CS 361 - Application Documenation
 
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte).
-
-## Creating a project
-
-If you're seeing this, you've probably already done this step. Congrats!
-
-```bash
-# create a new project in the current directory
-npm create svelte@latest
-
-# create a new project in my-app
-npm create svelte@latest my-app
+This page represents the common documenation pattern found in many software products especaily open source software and impements the common expected user pattern for finding and understaning application functionality in deatil when required.
+```
 ```
 
-## Developing
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
 
-```bash
-npm run dev
 
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
+## Using the Application
 
-## Building
+## first time you use the application
+1. open the application in your web-browser (default: http://localhost:5173/)
+2. login by providing atleast a password (default: password)
+3. using the controls you can make an API request to retereve your preconfigured data.
 
-To create a production version of your app:
 
-```bash
-npm run build
-```
+## Advnced application use
+[feature in development]
 
-You can preview the production build with `npm run preview`.
+- applicaiton api functions normaly executed by the web ui can be directly accessed with an api key at the "/api/" endpoint
 
-> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
+
+
+## References
+Application was created using the Svelte Kit Framework for javascript based web applications.
+- https://kit.svelte.dev/
+    
+    Sevelte Kit documentation: https://kit.svelte.dev/docs/
+
+Third party visual resouces are imported from the permissively licenced and near universal fontawesome and bootstrap toolkits
+
+- fontawesome
+
+    https://fontawesome.com/
+
+- bootstrap
+
+    https://getbootstrap.com/

@@ -23,4 +23,4 @@ export const actions = {
 			incorrect: true
 		});
 	}
-};
+}

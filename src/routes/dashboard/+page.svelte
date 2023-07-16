@@ -1,5 +1,26 @@
 <script>
     import {PUBLIC_TITLE} from '$env/static/public';
+    export let data;
+
+    function Request_Results() {
+          document.getElementById('IO_box').innerText=JSON.stringify(data.post, null, 2)
+     }
+    
+    function Clear_Results() {
+          document.getElementById('IO_box').innerText="Results will be displayed here."
+     } 
+
+    function Undo_Results(){
+        if(document.getElementById('IO_box').innerText=="Results will be displayed here."){
+            Request_Results()
+        }else{
+            document.getElementById('IO_box').innerText="Results will be displayed here."
+        }
+    }
+
+    function logout(){
+        document.getElementById('logout_form').submit();
+    }
 
 </script>
 <head>
@@ -33,11 +54,11 @@
                     <a href="#authmenu" data-bs-toggle="collapse" aria-expanded="false" class="dropdown-toggle no-caret-down"><i class="fas fa-user-shield"></i> Authentication</a>
                     <ul class="collapse list-unstyled" id="authmenu">
                         <li>
-                            <a href="/"><i class="fas fa-lock"></i> Login</a>
+                            <a href="/" on:click={logout}><i class="fas fa-lock"></i> Login</a>
                         </li>
                     </ul>
                 </li>
-                <li>
+                <li hidden>
                     <a href="#pagesmenu" data-bs-toggle="collapse" aria-expanded="false" class="dropdown-toggle no-caret-down"><i class="fas fa-copy"></i> Pages</a>
                     <ul class="collapse list-unstyled" id="pagesmenu">
                         <li>
@@ -63,29 +84,29 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-12 page-header">
-                            <div class="page-pretitle">Overview</div>
-                            <h2 class="page-title">Dashboard</h2>
+                            <div class="page-pretitle">API Overview</div>
+                            <h2 class="page-title">Application Interface Dashboard</h2>
                         </div>
                     </div>
                     <div class="row">
 
                         <div class="col-lg-3">
                             <div class="card">
-                                <div class="card-header">Options</div>
+                                <div class="card-header">Request Options</div>
                                     <div class="card-body text-left">
-                                        <h5 class="card-title">API Request Controls</h5>
-                                        <div class="text-left"><button type="button" class="btn btn-primary mb-1" >Request</button></div>
-                                        <div class="text-left"><button type="button" class="btn btn-primary mb-1" >Undo</button></div>
+                                        <h5 class="card-title">Controls</h5>
+                                        <div class="text-left"><button type="button" class="btn btn-primary mb-1" on:click={Request_Results} title="Will ask the server for your users configured and requested data">Request</button></div>
+                                        <div class="text-left"><button type="button" class="btn btn-primary mb-1" on:click={Undo_Results} title="Will undo the last operation affecting the results field">Undo</button></div>
                                     </div>
                             </div>
                         </div>
 
                         <div class="col-lg-9">
                             <div class="card">
-                                <div class="card-header">Results</div>
+                                <div class="card-header">Request Results</div>
                                 <div class="card-body">
-                                    <input type="text" style="height:250px" class="form-control input-lg mb-1" name="Results" disabled>
-                                    <div class="text-right"><button type="button" class="btn btn-primary mb-1">Clear Request Results</button></div>
+                                    <div id="IO_box" class="form-control input-lg mb-1 text-secondary" style="height:250px;"><pre id=json>Results will be displayed here.</pre></div>
+                                    <div class="text-right"><button type="button" class="btn btn-primary mb-1" on:click={Clear_Results} title="Will remove your custom results from the results box above">Clear Request Results</button></div>
                                 </div>
                             </div>
                         </div>
@@ -95,8 +116,10 @@
             </div>
         </div>
     </div>
+    <form method="POST" id="logout_form" hidden></form>
     <script src="assets/vendor/jquery/jquery.min.js"></script>
     <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="assets/js/script.js"></script>
+    <script src=" https://cdn.jsdelivr.net/npm/js-cookie@3.0.5/dist/js.cookie.min.js "></script>
 </body>
 
